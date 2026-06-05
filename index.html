@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Sai Sri Shanmukha Caterings</title>
+
   <style>
     body {
       margin: 0;
@@ -19,22 +20,20 @@
 
     header h1 {
       font-size: 45px;
-      margin-bottom: 10px;
     }
 
-    header p {
-      font-size: 22px;
-    }
-
-    .btn {
+    .btn, .back-btn, .menu-btn {
       display: inline-block;
-      margin-top: 25px;
-      padding: 14px 35px;
-      background: white;
-      color: #8b0000;
-      text-decoration: none;
+      margin: 10px;
+      padding: 14px 30px;
+      border: none;
       border-radius: 30px;
       font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      background: white;
+      color: #8b0000;
+      font-size: 16px;
     }
 
     .section {
@@ -51,9 +50,15 @@
     .card {
       width: 280px;
       border-radius: 20px;
-      padding: 25px;
+      padding: 30px;
       color: white;
       box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
     }
 
     .normal {
@@ -69,115 +74,272 @@
       border: 4px solid white;
     }
 
-    .card h3 {
-      font-size: 28px;
-      margin-bottom: 10px;
+    .hidden {
+      display: none;
     }
 
-    .menu {
-      background: rgba(255,255,255,0.25);
-      margin-top: 15px;
-      padding: 15px;
-      border-radius: 15px;
+    .box {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 25px;
+      background: white;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     }
 
-    .menu h4 {
-      margin: 10px 0;
-      font-size: 22px;
+    .category {
+      background: #8b0000;
+      color: white;
     }
 
-    .menu p {
-      margin: 6px 0;
+    .items {
+      text-align: left;
+      max-width: 500px;
+      margin: 20px auto;
+      font-size: 18px;
+      line-height: 2;
+    }
+
+    .items label {
+      display: block;
+      padding: 8px;
+      background: #f7f7f7;
+      margin: 8px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .create-btn {
+      background: #111;
+      color: white;
+      padding: 15px 35px;
+      border-radius: 30px;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #finalMenu {
+      background: #111;
+      color: white;
+      padding: 25px;
+      border-radius: 20px;
+      margin-top: 25px;
     }
 
     footer {
       background: #111;
       color: white;
       padding: 35px 20px;
-      font-size: 18px;
     }
 
     footer a {
       color: white;
       text-decoration: none;
     }
-
-    .icons {
-      font-size: 38px;
-      margin-bottom: 15px;
-    }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="icons">🍽️ 🥄 🍴 🥣</div>
-    <h1>Sai Sri Shanmukha Caterings and Events</h1>
-    <p>Traditional Taste • Best Service • Memorable Events</p>
-    <a href="#packages" class="btn">Enter</a>
-  </header>
+<header>
+  <div style="font-size:40px;">🍽️ 🥄 🍴 🥣</div>
+  <h1>Sai Sri Shanmukha Caterings and Events</h1>
+  <p>Traditional Taste • Best Service • Memorable Events</p>
+  <a href="#packages" class="btn">Enter</a>
+</header>
 
-  <section id="packages" class="section">
-    <h2>Our Catering Packages</h2>
+<section id="packages" class="section">
+  <h2>Our Catering Packages</h2>
 
-    <div class="cards">
-
-      <div class="card normal">
-        <h3>Normal</h3>
-        <p>Green Theme Menu</p>
-
-        <div class="menu">
-          <h4>Veg</h4>
-          <p>Veg Item 1</p>
-          <p>Veg Item 2</p>
-
-          <h4>Non-Veg</h4>
-          <p>Non-Veg Item 1</p>
-          <p>Non-Veg Item 2</p>
-        </div>
-      </div>
-
-      <div class="card standard">
-        <h3>Standard</h3>
-        <p>Orange Theme Menu</p>
-
-        <div class="menu">
-          <h4>Veg</h4>
-          <p>Veg Item 1</p>
-          <p>Veg Item 2</p>
-
-          <h4>Non-Veg</h4>
-          <p>Non-Veg Item 1</p>
-          <p>Non-Veg Item 2</p>
-        </div>
-      </div>
-
-      <div class="card premium">
-        <h3>Premium</h3>
-        <p>Black & White Luxury Menu</p>
-
-        <div class="menu">
-          <h4>Veg</h4>
-          <p>Premium Veg Item 1</p>
-          <p>Premium Veg Item 2</p>
-
-          <h4>Non-Veg</h4>
-          <p>Premium Non-Veg Item 1</p>
-          <p>Premium Non-Veg Item 2</p>
-        </div>
-      </div>
-
+  <div class="cards">
+    <div class="card normal" onclick="openPackage('Normal')">
+      <h3>Normal</h3>
+      <p>Green Theme Menu</p>
     </div>
-  </section>
 
-  <footer>
-    <h2>Contact Us</h2>
-    <p>📞 <a href="tel:9985901713">9985901713</a></p>
-    <p>✉️ <a href="mailto:catering.events.saisrishanmukha@gmail.com">
-      catering.events.saisrishanmukha@gmail.com
-    </a></p>
-  </footer>
+    <div class="card standard" onclick="openPackage('Standard')">
+      <h3>Standard</h3>
+      <p>Orange Theme Menu</p>
+    </div>
+
+    <div class="card premium" onclick="openPackage('Premium')">
+      <h3>Premium</h3>
+      <p>Black & White Luxury Menu</p>
+    </div>
+  </div>
+</section>
+
+<section id="menuBuilder" class="section hidden">
+  <div class="box">
+    <h2 id="packageTitle"></h2>
+
+    <h3>Select Type</h3>
+    <button class="menu-btn" onclick="selectType('Veg')">🌱 Veg</button>
+    <button class="menu-btn" onclick="selectType('Non-Veg')">🍗 Non-Veg</button>
+
+    <div id="categories" class="hidden">
+      <h3>Select Category</h3>
+
+      <button class="menu-btn category" onclick="showCategory('curries')">Curries</button>
+      <button class="menu-btn category" onclick="showCategory('rice')">Rice Items</button>
+      <button class="menu-btn category" onclick="showCategory('starters')">Starters</button>
+      <button class="menu-btn category" onclick="showCategory('sweets')">Sweets</button>
+      <button class="menu-btn category" onclick="showCategory('drinks')">Drinks</button>
+    </div>
+
+    <div id="curries" class="items hidden">
+      <h3>Curries - Select Any Items</h3>
+      <label><input type="checkbox" value="Paneer Curry"> Paneer Curry</label>
+      <label><input type="checkbox" value="Dal Fry"> Dal Fry</label>
+      <label><input type="checkbox" value="Mixed Veg Curry"> Mixed Veg Curry</label>
+      <label><input type="checkbox" value="Chicken Curry"> Chicken Curry</label>
+      <label><input type="checkbox" value="Mutton Curry"> Mutton Curry</label>
+    </div>
+
+    <div id="rice" class="items hidden">
+      <h3>Rice Items - Select Any Items</h3>
+      <label><input type="checkbox" value="White Rice"> White Rice</label>
+      <label><input type="checkbox" value="Jeera Rice"> Jeera Rice</label>
+      <label><input type="checkbox" value="Veg Biryani"> Veg Biryani</label>
+      <label><input type="checkbox" value="Chicken Biryani"> Chicken Biryani</label>
+      <label><input type="checkbox" value="Mutton Biryani"> Mutton Biryani</label>
+    </div>
+
+    <div id="starters" class="items hidden">
+      <h3>Starters - Select Any Items</h3>
+      <label><input type="checkbox" value="Veg Manchurian"> Veg Manchurian</label>
+      <label><input type="checkbox" value="Paneer 65"> Paneer 65</label>
+      <label><input type="checkbox" value="Chicken 65"> Chicken 65</label>
+      <label><input type="checkbox" value="Chicken Fry"> Chicken Fry</label>
+    </div>
+
+    <div id="sweets" class="items hidden">
+      <h3>Sweets - Select Any Items</h3>
+      <label><input type="checkbox" value="Gulab Jamun"> Gulab Jamun</label>
+      <label><input type="checkbox" value="Double Ka Meetha"> Double Ka Meetha</label>
+      <label><input type="checkbox" value="Payasam"> Payasam</label>
+      <label><input type="checkbox" value="Ice Cream"> Ice Cream</label>
+    </div>
+
+    <div id="drinks" class="items hidden">
+      <h3>Drinks - Select Any Items</h3>
+      <label><input type="checkbox" value="Water Bottle"> Water Bottle</label>
+      <label><input type="checkbox" value="Soft Drinks"> Soft Drinks</label>
+      <label><input type="checkbox" value="Badam Milk"> Badam Milk</label>
+      <label><input type="checkbox" value="Fruit Juice"> Fruit Juice</label>
+    </div>
+
+    <br>
+    <button class="create-btn" onclick="createMenu()">Create My Menu</button>
+
+    <div id="finalMenu" class="hidden"></div>
+
+    <br>
+    <button class="back-btn" onclick="goBack()">Back to Packages</button>
+  </div>
+</section>
+
+<footer>
+  <h2>Contact Us</h2>
+  <p>📞 <a href="tel:9985901713">9985901713</a></p>
+  <p>✉️ <a href="mailto:catering.events.saisrishanmukha@gmail.com">
+    catering.events.saisrishanmukha@gmail.com
+  </a></p>
+</footer>
+
+<script>
+  let selectedPackage = "";
+  let selectedType = "";
+
+  function openPackage(packageName) {
+    selectedPackage = packageName;
+
+    document.getElementById("packageTitle").innerText =
+      packageName + " Package - Create Your Menu";
+
+    document.getElementById("menuBuilder").classList.remove("hidden");
+    document.getElementById("menuBuilder").scrollIntoView({ behavior: "smooth" });
+
+    document.getElementById("categories").classList.add("hidden");
+    hideAllCategories();
+    clearSelections();
+    document.getElementById("finalMenu").classList.add("hidden");
+  }
+
+  function selectType(type) {
+    selectedType = type;
+
+    document.getElementById("categories").classList.remove("hidden");
+    hideAllCategories();
+    clearSelections();
+    document.getElementById("finalMenu").classList.add("hidden");
+  }
+
+  function showCategory(categoryId) {
+    hideAllCategories();
+    document.getElementById(categoryId).classList.remove("hidden");
+  }
+
+  function hideAllCategories() {
+    let categories = ["curries", "rice", "starters", "sweets", "drinks"];
+
+    categories.forEach(function(id) {
+      document.getElementById(id).classList.add("hidden");
+    });
+  }
+
+  function clearSelections() {
+    let checkboxes = document.querySelectorAll("input[type='checkbox']");
+    checkboxes.forEach(function(box) {
+      box.checked = false;
+    });
+  }
+
+  function createMenu() {
+    let selectedItems = [];
+    let checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
+
+    checkboxes.forEach(function(box) {
+      selectedItems.push(box.value);
+    });
+
+    let finalMenu = document.getElementById("finalMenu");
+    finalMenu.classList.remove("hidden");
+
+    if (selectedType === "") {
+      finalMenu.innerHTML = "<h3>Please select Veg or Non-Veg first.</h3>";
+      return;
+    }
+
+    if (selectedItems.length === 0) {
+      finalMenu.innerHTML = "<h3>Please select at least one menu item.</h3>";
+      return;
+    }
+
+    let menuHTML = `
+      <h2>Your Created Menu</h2>
+      <p><b>Package:</b> ${selectedPackage}</p>
+      <p><b>Type:</b> ${selectedType}</p>
+      <h3>Selected Items:</h3>
+      <ul style="list-style:none; padding:0;">
+    `;
+
+    selectedItems.forEach(function(item) {
+      menuHTML += `<li>✅ ${item}</li>`;
+    });
+
+    menuHTML += "</ul>";
+
+    finalMenu.innerHTML = menuHTML;
+  }
+
+  function goBack() {
+    document.getElementById("menuBuilder").classList.add("hidden");
+    document.getElementById("packages").scrollIntoView({ behavior: "smooth" });
+  }
+</script>
 
 </body>
 </html>
