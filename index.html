@@ -325,7 +325,7 @@
     }
 
     let message =
-`🍽️ Sai Sri Shanmukha Caterings and Events
+`Sai Sri Shanmukha Caterings and Events
 
 Package: ${selectedPackage}
 Type: ${selectedType}
@@ -336,9 +336,10 @@ ${selectedItems.join("\n")}
 Please contact me regarding this menu.`;
 
     let whatsappURL =
-      "https://wa.me/919985901713?text=" + encodeURIComponent(message);
+      "https://api.whatsapp.com/send?phone=919985901713&text=" +
+      encodeURIComponent(message);
 
-    window.open(whatsappURL, "_blank");
+    window.location.href = whatsappURL;
   }
 
   function goBack() {
