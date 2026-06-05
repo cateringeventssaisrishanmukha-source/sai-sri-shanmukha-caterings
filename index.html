@@ -1,398 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sai Sri Shanmukha Caterings and Events</title>
+  <title>Sai Sri Shanmukha Caterings</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff8ec;
+      color: #222;
+      text-align: center;
+    }
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Segoe UI',Arial,sans-serif;
-}
+    header {
+      background: linear-gradient(135deg, #8b0000, #ff9900);
+      color: white;
+      padding: 80px 20px;
+    }
 
-body{
-  min-height:100vh;
-  overflow-x:hidden;
-  background:#111;
-}
+    header h1 {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
 
-.page{
-  min-height:100vh;
-  display:none;
-  padding:30px;
-  text-align:center;
-  animation:fadeIn 1s ease;
-}
+    header p {
+      font-size: 22px;
+    }
 
-.page.active{
-  display:block;
-}
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 35px;
+      background: white;
+      color: #8b0000;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
 
-@keyframes fadeIn{
-  from{opacity:0;transform:scale(0.95);}
-  to{opacity:1;transform:scale(1);}
-}
+    .section {
+      padding: 50px 20px;
+    }
 
-.home{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  background:
-    radial-gradient(circle at top,#fff3c4,#ff9f1c,#5c0000);
-  color:white;
-  position:relative;
-  overflow:hidden;
-}
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
 
-.bg-icons{
-  position:absolute;
-  font-size:55px;
-  opacity:0.15;
-  animation:float 8s infinite linear;
-}
+    .card {
+      width: 280px;
+      border-radius: 20px;
+      padding: 25px;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
 
-.i1{top:10%;left:10%;}
-.i2{top:20%;right:15%;}
-.i3{bottom:15%;left:20%;}
-.i4{bottom:20%;right:10%;}
-.i5{top:50%;left:5%;}
-.i6{top:55%;right:5%;}
+    .normal {
+      background: linear-gradient(135deg, #0b8f3a, #7be495);
+    }
 
-@keyframes float{
-  0%{transform:translateY(0) rotate(0deg);}
-  50%{transform:translateY(-25px) rotate(15deg);}
-  100%{transform:translateY(0) rotate(0deg);}
-}
+    .standard {
+      background: linear-gradient(135deg, #ff7a00, #ffd166);
+    }
 
-.logo-title{
-  font-size:48px;
-  font-weight:900;
-  text-shadow:0 0 20px #000;
-  animation:glow 2s infinite alternate;
-}
+    .premium {
+      background: linear-gradient(135deg, #000, #444);
+      border: 4px solid white;
+    }
 
-@keyframes glow{
-  from{text-shadow:0 0 10px white;}
-  to{text-shadow:0 0 35px gold,0 0 60px red;}
-}
+    .card h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
 
-.tagline{
-  font-size:22px;
-  margin:20px;
-}
+    .menu {
+      background: rgba(255,255,255,0.25);
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 15px;
+    }
 
-.enter-btn{
-  padding:16px 45px;
-  border:none;
-  border-radius:50px;
-  font-size:22px;
-  font-weight:bold;
-  cursor:pointer;
-  color:white;
-  background:linear-gradient(45deg,#000,#b30000,#ffcc00);
-  box-shadow:0 0 25px white;
-  transition:0.4s;
-}
+    .menu h4 {
+      margin: 10px 0;
+      font-size: 22px;
+    }
 
-.enter-btn:hover{
-  transform:scale(1.15);
-  box-shadow:0 0 50px gold;
-}
+    .menu p {
+      margin: 6px 0;
+    }
 
-.contact{
-  margin-top:30px;
-  font-size:18px;
-}
+    footer {
+      background: #111;
+      color: white;
+      padding: 35px 20px;
+      font-size: 18px;
+    }
 
-.contact a{
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-}
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
 
-.packages{
-  background:
-    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
-    radial-gradient(circle,#444,#111);
-  color:white;
-}
-
-.heading{
-  font-size:42px;
-  margin:30px 0;
-  text-transform:uppercase;
-}
-
-.cards{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:35px;
-  margin-top:50px;
-}
-
-.card{
-  width:290px;
-  min-height:230px;
-  border-radius:30px;
-  padding:30px;
-  cursor:pointer;
-  box-shadow:0 15px 35px rgba(0,0,0,.5);
-  transition:.4s;
-  position:relative;
-  overflow:hidden;
-}
-
-.card:hover{
-  transform:translateY(-15px) scale(1.05);
-}
-
-.card h2{
-  font-size:34px;
-  margin-bottom:15px;
-}
-
-.normal{
-  background:linear-gradient(135deg,#007a2f,#43d17a);
-  border:4px solid white;
-}
-
-.standard{
-  background:linear-gradient(135deg,#ff7900,#ffd166);
-  border:4px solid white;
-}
-
-.premium{
-  background:linear-gradient(135deg,#000,#333,#fff);
-  border:4px solid white;
-  color:white;
-}
-
-.menu-page{
-  color:white;
-}
-
-.normal-bg{
-  background:linear-gradient(135deg,#004d1f,#16a34a);
-}
-
-.standard-bg{
-  background:linear-gradient(135deg,#cc5200,#ff9f1c);
-}
-
-.premium-bg{
-  background:
-    linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.9)),
-    linear-gradient(135deg,#000,#111,#fff);
-}
-
-.menu-box{
-  max-width:850px;
-  margin:30px auto;
-  padding:35px;
-  border-radius:35px;
-  box-shadow:0 0 35px rgba(255,255,255,.3);
-}
-
-.normal-box{
-  background:rgba(0,100,40,.8);
-  border:6px double white;
-}
-
-.standard-box{
-  background:rgba(255,120,0,.85);
-  border:6px dotted white;
-}
-
-.premium-box{
-  background:rgba(0,0,0,.9);
-  border:6px solid white;
-}
-
-.type-buttons{
-  margin:25px 0;
-}
-
-.type-buttons button,.back-btn{
-  padding:13px 30px;
-  margin:10px;
-  border:none;
-  border-radius:30px;
-  font-size:18px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.veg{
-  background:#10b981;
-  color:white;
-}
-
-.nonveg{
-  background:#dc2626;
-  color:white;
-}
-
-.back-btn{
-  background:white;
-  color:#111;
-}
-
-.menu-list{
-  margin-top:25px;
-  font-size:22px;
-  line-height:2;
-  list-style:none;
-}
-
-.hidden{
-  display:none;
-}
-
-@media(max-width:700px){
-  .logo-title{font-size:32px;}
-  .heading{font-size:30px;}
-  .card{width:90%;}
-}
-</style>
+    .icons {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 
 <body>
 
-<section id="home" class="page home active">
-  <div class="bg-icons i1">🍽️</div>
-  <div class="bg-icons i2">🥄</div>
-  <div class="bg-icons i3">🍴</div>
-  <div class="bg-icons i4">🍛</div>
-  <div class="bg-icons i5">🥣</div>
-  <div class="bg-icons i6">🍽️</div>
+  <header>
+    <div class="icons">🍽️ 🥄 🍴 🥣</div>
+    <h1>Sai Sri Shanmukha Caterings and Events</h1>
+    <p>Traditional Taste • Best Service • Memorable Events</p>
+    <a href="#packages" class="btn">Enter</a>
+  </header>
 
-  <h1 class="logo-title">Sai Sri Shanmukha<br>Caterings & Events</h1>
-  <p class="tagline">Royal Taste • Premium Service • Memorable Events</p>
-  <button class="enter-btn" onclick="openPage('packages')">ENTER</button>
+  <section id="packages" class="section">
+    <h2>Our Catering Packages</h2>
 
-  <div class="contact">
-    📞 <a href="tel:9985901713">9985901713</a><br>
-    ✉️ <a href="mailto:catering.events.saisrishanmukha@gmail.com">
+    <div class="cards">
+
+      <div class="card normal">
+        <h3>Normal</h3>
+        <p>Green Theme Menu</p>
+
+        <div class="menu">
+          <h4>Veg</h4>
+          <p>Veg Item 1</p>
+          <p>Veg Item 2</p>
+
+          <h4>Non-Veg</h4>
+          <p>Non-Veg Item 1</p>
+          <p>Non-Veg Item 2</p>
+        </div>
+      </div>
+
+      <div class="card standard">
+        <h3>Standard</h3>
+        <p>Orange Theme Menu</p>
+
+        <div class="menu">
+          <h4>Veg</h4>
+          <p>Veg Item 1</p>
+          <p>Veg Item 2</p>
+
+          <h4>Non-Veg</h4>
+          <p>Non-Veg Item 1</p>
+          <p>Non-Veg Item 2</p>
+        </div>
+      </div>
+
+      <div class="card premium">
+        <h3>Premium</h3>
+        <p>Black & White Luxury Menu</p>
+
+        <div class="menu">
+          <h4>Veg</h4>
+          <p>Premium Veg Item 1</p>
+          <p>Premium Veg Item 2</p>
+
+          <h4>Non-Veg</h4>
+          <p>Premium Non-Veg Item 1</p>
+          <p>Premium Non-Veg Item 2</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <h2>Contact Us</h2>
+    <p>📞 <a href="tel:9985901713">9985901713</a></p>
+    <p>✉️ <a href="mailto:catering.events.saisrishanmukha@gmail.com">
       catering.events.saisrishanmukha@gmail.com
-    </a>
-  </div>
-</section>
-
-<section id="packages" class="page packages">
-  <h1 class="heading">Choose Your Package</h1>
-
-  <div class="cards">
-    <div class="card normal" onclick="openPage('normalMenu')">
-      <h2>Normal</h2>
-      <p>Simple and tasty menu</p>
-      <h3>Veg & Non-Veg</h3>
-    </div>
-
-    <div class="card standard" onclick="openPage('standardMenu')">
-      <h2>Standard</h2>
-      <p>Special event menu</p>
-      <h3>Veg & Non-Veg</h3>
-    </div>
-
-    <div class="card premium" onclick="openPage('premiumMenu')">
-      <h2>Premium</h2>
-      <p>Luxury black & white menu</p>
-      <h3>Veg & Non-Veg</h3>
-    </div>
-  </div>
-
-  <button class="back-btn" onclick="openPage('home')">Back</button>
-</section>
-
-<section id="normalMenu" class="page menu-page normal-bg">
-  <div class="menu-box normal-box">
-    <h1>Normal Menu</h1>
-    <div class="type-buttons">
-      <button class="veg" onclick="showMenu('normalVeg','normalNonVeg')">Veg</button>
-      <button class="nonveg" onclick="showMenu('normalNonVeg','normalVeg')">Non-Veg</button>
-    </div>
-
-    <ul id="normalVeg" class="menu-list">
-      <li>Veg Item 1</li>
-      <li>Veg Item 2</li>
-      <li>Veg Item 3</li>
-    </ul>
-
-    <ul id="normalNonVeg" class="menu-list hidden">
-      <li>Non-Veg Item 1</li>
-      <li>Non-Veg Item 2</li>
-      <li>Non-Veg Item 3</li>
-    </ul>
-  </div>
-  <button class="back-btn" onclick="openPage('packages')">Back</button>
-</section>
-
-<section id="standardMenu" class="page menu-page standard-bg">
-  <div class="menu-box standard-box">
-    <h1>Standard Menu</h1>
-    <div class="type-buttons">
-      <button class="veg" onclick="showMenu('standardVeg','standardNonVeg')">Veg</button>
-      <button class="nonveg" onclick="showMenu('standardNonVeg','standardVeg')">Non-Veg</button>
-    </div>
-
-    <ul id="standardVeg" class="menu-list">
-      <li>Veg Item 1</li>
-      <li>Veg Item 2</li>
-      <li>Veg Item 3</li>
-    </ul>
-
-    <ul id="standardNonVeg" class="menu-list hidden">
-      <li>Non-Veg Item 1</li>
-      <li>Non-Veg Item 2</li>
-      <li>Non-Veg Item 3</li>
-    </ul>
-  </div>
-  <button class="back-btn" onclick="openPage('packages')">Back</button>
-</section>
-
-<section id="premiumMenu" class="page menu-page premium-bg">
-  <div class="menu-box premium-box">
-    <h1 style="color:white;">Premium Menu</h1>
-    <div class="type-buttons">
-      <button class="veg" onclick="showMenu('premiumVeg','premiumNonVeg')">Veg</button>
-      <button class="nonveg" onclick="showMenu('premiumNonVeg','premiumVeg')">Non-Veg</button>
-    </div>
-
-    <ul id="premiumVeg" class="menu-list">
-      <li>Premium Veg Item 1</li>
-      <li>Premium Veg Item 2</li>
-      <li>Premium Veg Item 3</li>
-    </ul>
-
-    <ul id="premiumNonVeg" class="menu-list hidden">
-      <li>Premium Non-Veg Item 1</li>
-      <li>Premium Non-Veg Item 2</li>
-      <li>Premium Non-Veg Item 3</li>
-    </ul>
-  </div>
-  <button class="back-btn" onclick="openPage('packages')">Back</button>
-</section>
-
-<script>
-function openPage(pageId){
-  document.querySelectorAll('.page').forEach(page=>{
-    page.classList.remove('active');
-  });
-
-  document.getElementById(pageId).classList.add('active');
-  window.scrollTo(0,0);
-}
-
-function showMenu(showId,hideId){
-  document.getElementById(showId).classList.remove('hidden');
-  document.getElementById(hideId).classList.add('hidden');
-}
-</script>
+    </a></p>
+  </footer>
 
 </body>
 </html>
