@@ -24,12 +24,13 @@
 
     #landingPage {
       min-height: 100vh;
+      width: 100%;
       background:
-        linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68)),
-        url("logo.png");
-      background-size: 70%;
+        linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.62)),
+        url("logo.png.jpeg");
+      background-size: cover, 92%;
       background-repeat: no-repeat;
-      background-position: center;
+      background-position: center, center;
       color: white;
       display: flex;
       justify-content: center;
@@ -56,26 +57,20 @@
     }
 
     .landing-content h1 {
-      font-size: 39px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(34px, 11vw, 52px);
       line-height: 1.15;
       margin: 15px 0;
-      text-shadow: 0 0 18px rgba(255,255,255,0.8);
-      animation: titleGlow 2s infinite alternate;
-    }
-
-    @keyframes titleGlow {
-      from {
-        text-shadow: 0 0 10px white;
-      }
-      to {
-        text-shadow: 0 0 25px gold, 0 0 45px red;
-      }
+      letter-spacing: 1px;
+      color: #fff7df;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.8);
     }
 
     .landing-content p {
       font-size: 18px;
       line-height: 1.7;
       margin: 25px 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
     }
 
     .enter-btn {
@@ -94,7 +89,6 @@
 
     .enter-btn:hover {
       transform: scale(1.08);
-      box-shadow: 0 0 25px white;
     }
 
     #mainPage {
@@ -102,9 +96,9 @@
       background:
         linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90)),
         url("logo.png.jpeg");
-      background-size: 55%;
+      background-size: cover, 75%;
       background-repeat: no-repeat;
-      background-position: center;
+      background-position: center, center;
       background-attachment: fixed;
     }
 
@@ -118,6 +112,7 @@
     .top-bar h2 {
       margin: 0;
       font-size: 24px;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .top-bar p {
@@ -133,6 +128,7 @@
       font-size: 27px;
       color: #5c0000;
       margin-bottom: 30px;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .cards {
@@ -200,6 +196,7 @@
       font-size: 31px;
       z-index: 2;
       margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .normal {
@@ -241,6 +238,7 @@
       color: #5c0000;
       font-size: 24px;
       margin-bottom: 20px;
+      font-family: Georgia, 'Times New Roman', serif;
     }
 
     .type-boxes {
@@ -284,7 +282,6 @@
       border-radius: 30px;
       font-weight: bold;
       cursor: pointer;
-      text-decoration: none;
       background: white;
       color: #8b0000;
       font-size: 16px;
@@ -366,11 +363,11 @@
 
     @media (min-width: 800px) {
       #landingPage {
-        background-size: 42%;
+        background-size: cover, 42%;
       }
 
       #mainPage {
-        background-size: 35%;
+        background-size: cover, 35%;
       }
 
       .landing-content h1 {
