@@ -11,7 +11,662 @@
 
     body {
       margin: 0;
+      font-family: Arial, sans-serif;<!DOCTYPE html>
+<html>
+<head>
+  <title>Sai Sri Shanmukha Caterings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
       font-family: Arial, sans-serif;
+      background: #fff8ec;
+      color: #222;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #landingPage {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(139,0,0,0.88), rgba(255,122,0,0.88)),
+        url("logo.png.jpeg") center center no-repeat;
+      background-size: cover, 85%;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #landingPage::before {
+      content: "🍽️ 🥄 🍴 🥣 🍛";
+      position: absolute;
+      font-size: 55px;
+      opacity: 0.15;
+      top: 40px;
+      left: -250px;
+      animation: moveIcons 12s linear infinite;
+    }
+
+    @keyframes moveIcons {
+      from { left: -300px; }
+      to { left: 100%; }
+    }
+
+    .landing-content {
+      width: 100%;
+      max-width: 430px;
+      animation: fadeUp 1s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .main-icons {
+      font-size: 48px;
+      margin-bottom: 25px;
+    }
+
+    .landing-content h1 {
+      font-size: 39px;
+      line-height: 1.15;
+      margin: 15px 0;
+      text-shadow: 0 0 18px rgba(255,255,255,0.8);
+      animation: titleGlow 2s infinite alternate;
+    }
+
+    @keyframes titleGlow {
+      from {
+        text-shadow: 0 0 10px white;
+      }
+      to {
+        text-shadow: 0 0 25px gold, 0 0 45px red;
+      }
+    }
+
+    .landing-content p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 25px 0;
+    }
+
+    .enter-btn {
+      margin-top: 20px;
+      padding: 16px 50px;
+      border: none;
+      border-radius: 40px;
+      background: white;
+      color: #8b0000;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      transition: 0.3s;
+    }
+
+    .enter-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px white;
+    }
+
+    #mainPage {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(255,248,236,0.88), rgba(255,248,236,0.88)),
+        url("logo.png.jpeg") center center fixed no-repeat;
+      background-size: cover, 85%;
+    }
+
+    .top-bar {
+      background: linear-gradient(135deg, rgba(139,0,0,0.95), rgba(255,153,0,0.95));
+      color: white;
+      padding: 22px 15px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+    .top-bar h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .top-bar p {
+      margin: 8px 0 0;
+      font-size: 14px;
+    }
+
+    .section {
+      padding: 35px 14px;
+    }
+
+    .section h2 {
+      font-size: 27px;
+      color: #5c0000;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      width: 100%;
+    }
+
+    .card {
+      width: 92%;
+      max-width: 370px;
+      height: 135px;
+      border-radius: 25px;
+      padding: 25px;
+      color: white;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: 0.4s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      animation: floatCard 3s ease-in-out infinite;
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .card:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes floatCard {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+      100% { transform: translateY(0); }
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -80%;
+      width: 50%;
+      height: 100%;
+      background: rgba(255,255,255,0.35);
+      transform: skewX(-25deg);
+      transition: 0.6s;
+    }
+
+    .card:hover::before {
+      left: 130%;
+    }
+
+    .card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+    }
+
+    .card h3 {
+      font-size: 31px;
+      z-index: 2;
+      margin: 0;
+    }
+
+    .normal {
+      background: linear-gradient(135deg, #0b8f3a, #7be495);
+    }
+
+    .standard {
+      background: linear-gradient(135deg, #ff7a00, #ffd166);
+    }
+
+    .premium {
+      background: linear-gradient(135deg, #000, #444);
+      border: 4px solid white;
+    }
+
+    .box {
+      width: 94%;
+      max-width: 520px;
+      margin: 25px auto;
+      padding: 22px 14px;
+      border-radius: 25px;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      animation: openBox 0.5s ease;
+    }
+
+    @keyframes openBox {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #packageTitle {
+      color: #5c0000;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .type-boxes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .type-card {
+      width: 85%;
+      max-width: 300px;
+      padding: 18px;
+      border-radius: 18px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
+
+    .type-card:hover {
+      transform: scale(1.05);
+    }
+
+    .veg-card {
+      background: linear-gradient(135deg, #0b8f3a, #7be495);
+    }
+
+    .nonveg-card {
+      background: linear-gradient(135deg, #b00020, #ff4d4d);
+    }
+
+    .btn, .back-btn, .menu-btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      background: white;
+      color: #8b0000;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .menu-btn:hover, .back-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 18px rgba(0,0,0,0.3);
+    }
+
+    .category {
+      background: #8b0000;
+      color: white;
+      width: 85%;
+      max-width: 300px;
+    }
+
+    .items {
+      text-align: left;
+      width: 94%;
+      max-width: 420px;
+      margin: 20px auto;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .items h3 {
+      text-align: center;
+      color: #5c0000;
+    }
+
+    .items label {
+      display: block;
+      padding: 12px;
+      background: rgba(247,247,247,0.95);
+      margin: 9px 0;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+
+    .items input {
+      transform: scale(1.2);
+      margin-right: 8px;
+    }
+
+    .submit-btn {
+      background: #25D366;
+      color: white;
+      padding: 15px 28px;
+      border-radius: 30px;
+      border: none;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 85%;
+      max-width: 320px;
+    }
+
+    .submit-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 18px #25D366;
+    }
+
+    footer {
+      background: rgba(17,17,17,0.96);
+      color: white;
+      padding: 30px 15px;
+      font-size: 15px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    @media (min-width: 800px) {
+      #mainPage {
+        background-size: cover, 45%;
+      }
+
+      .landing-content h1 {
+        font-size: 55px;
+      }
+
+      .landing-content p {
+        font-size: 22px;
+      }
+
+      .cards {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        width: 280px;
+        height: 170px;
+      }
+
+      .type-boxes {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .type-card {
+        width: 160px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section id="landingPage">
+  <div class="landing-content">
+    <div class="main-icons">🍽️ 🥄 🍴 🥣</div>
+
+    <h1>Sai Sri Shanmukha<br>Caterings and Events</h1>
+
+    <p>
+      Traditional Taste<br>
+      Best Service<br>
+      Memorable Events
+    </p>
+
+    <button class="enter-btn" onclick="enterSite()">Enter</button>
+  </div>
+</section>
+
+<section id="mainPage" class="hidden">
+
+  <div class="top-bar">
+    <h2>Sai Sri Shanmukha Caterings</h2>
+    <p>Choose your package and create your menu</p>
+  </div>
+
+  <section id="packages" class="section">
+    <h2>Our Catering Packages</h2>
+
+    <div class="cards">
+      <div class="card normal" onclick="openPackage('Normal')">
+        <h3>Normal</h3>
+      </div>
+
+      <div class="card standard" onclick="openPackage('Standard')">
+        <h3>Standard</h3>
+      </div>
+
+      <div class="card premium" onclick="openPackage('Premium')">
+        <h3>Premium</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="menuBuilder" class="section hidden">
+    <div class="box">
+      <h2 id="packageTitle"></h2>
+
+      <h3>Select Type</h3>
+
+      <div class="type-boxes">
+        <div class="type-card veg-card" onclick="selectType('Veg')">
+          🌱 Veg
+        </div>
+
+        <div class="type-card nonveg-card" onclick="selectType('Non-Veg')">
+          🍗 Non-Veg
+        </div>
+      </div>
+
+      <div id="categories" class="hidden">
+        <h3>Select Category</h3>
+
+        <button class="menu-btn category" onclick="showCategory('curries')">Curries</button>
+        <button class="menu-btn category" onclick="showCategory('rice')">Rice Items</button>
+        <button class="menu-btn category" onclick="showCategory('starters')">Starters</button>
+        <button class="menu-btn category" onclick="showCategory('sweets')">Sweets</button>
+        <button class="menu-btn category" onclick="showCategory('drinks')">Drinks</button>
+      </div>
+
+      <div id="curries" class="items hidden">
+        <h3>Curries - Select Items</h3>
+        <label><input type="checkbox" value="Paneer Curry"> Paneer Curry</label>
+        <label><input type="checkbox" value="Dal Fry"> Dal Fry</label>
+        <label><input type="checkbox" value="Mixed Veg Curry"> Mixed Veg Curry</label>
+        <label><input type="checkbox" value="Chicken Curry"> Chicken Curry</label>
+        <label><input type="checkbox" value="Mutton Curry"> Mutton Curry</label>
+      </div>
+
+      <div id="rice" class="items hidden">
+        <h3>Rice Items - Select Items</h3>
+        <label><input type="checkbox" value="White Rice"> White Rice</label>
+        <label><input type="checkbox" value="Jeera Rice"> Jeera Rice</label>
+        <label><input type="checkbox" value="Veg Biryani"> Veg Biryani</label>
+        <label><input type="checkbox" value="Chicken Biryani"> Chicken Biryani</label>
+        <label><input type="checkbox" value="Mutton Biryani"> Mutton Biryani</label>
+      </div>
+
+      <div id="starters" class="items hidden">
+        <h3>Starters - Select Items</h3>
+        <label><input type="checkbox" value="Veg Manchurian"> Veg Manchurian</label>
+        <label><input type="checkbox" value="Paneer 65"> Paneer 65</label>
+        <label><input type="checkbox" value="Chicken 65"> Chicken 65</label>
+        <label><input type="checkbox" value="Chicken Fry"> Chicken Fry</label>
+      </div>
+
+      <div id="sweets" class="items hidden">
+        <h3>Sweets - Select Items</h3>
+        <label><input type="checkbox" value="Gulab Jamun"> Gulab Jamun</label>
+        <label><input type="checkbox" value="Double Ka Meetha"> Double Ka Meetha</label>
+        <label><input type="checkbox" value="Payasam"> Payasam</label>
+        <label><input type="checkbox" value="Ice Cream"> Ice Cream</label>
+      </div>
+
+      <div id="drinks" class="items hidden">
+        <h3>Drinks - Select Items</h3>
+        <label><input type="checkbox" value="Water Bottle"> Water Bottle</label>
+        <label><input type="checkbox" value="Soft Drinks"> Soft Drinks</label>
+        <label><input type="checkbox" value="Badam Milk"> Badam Milk</label>
+        <label><input type="checkbox" value="Fruit Juice"> Fruit Juice</label>
+      </div>
+
+      <br>
+
+      <button class="submit-btn" onclick="sendToWhatsApp()">
+        Submit Menu on WhatsApp
+      </button>
+
+      <br><br>
+
+      <button class="back-btn" onclick="goBack()">Back to Packages</button>
+    </div>
+  </section>
+
+  <footer>
+    <h2>Contact Us</h2>
+    <p>📞 <a href="tel:8309361627">8309361627</a></p>
+    <p>
+      ✉️ <a href="mailto:catering.events.saisrishanmukha@gmail.com">
+        catering.events.saisrishanmukha@gmail.com
+      </a>
+    </p>
+  </footer>
+
+</section>
+
+<script>
+  let selectedPackage = "";
+  let selectedType = "";
+
+  function enterSite() {
+    document.getElementById("landingPage").style.display = "none";
+    document.getElementById("mainPage").classList.remove("hidden");
+    window.scrollTo(0, 0);
+  }
+
+  function openPackage(packageName) {
+    selectedPackage = packageName;
+
+    document.getElementById("packageTitle").innerText =
+      packageName + " Package - Create Your Menu";
+
+    document.getElementById("menuBuilder").classList.remove("hidden");
+    document.getElementById("menuBuilder").scrollIntoView({ behavior: "smooth" });
+
+    document.getElementById("categories").classList.add("hidden");
+    hideAllCategories();
+    clearSelections();
+    selectedType = "";
+  }
+
+  function selectType(type) {
+    selectedType = type;
+    document.getElementById("categories").classList.remove("hidden");
+    hideAllCategories();
+    clearSelections();
+  }
+
+  function showCategory(categoryId) {
+    hideAllCategories();
+    document.getElementById(categoryId).classList.remove("hidden");
+  }
+
+  function hideAllCategories() {
+    let categories = ["curries", "rice", "starters", "sweets", "drinks"];
+
+    categories.forEach(function(id) {
+      document.getElementById(id).classList.add("hidden");
+    });
+  }
+
+  function clearSelections() {
+    let checkboxes = document.querySelectorAll("input[type='checkbox']");
+    checkboxes.forEach(function(box) {
+      box.checked = false;
+    });
+  }
+
+  function sendToWhatsApp() {
+    let selectedItems = [];
+    let checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
+
+    checkboxes.forEach(function(box) {
+      selectedItems.push(box.value);
+    });
+
+    if (selectedPackage === "") {
+      alert("Please select Normal, Standard or Premium package.");
+      return;
+    }
+
+    if (selectedType === "") {
+      alert("Please select Veg or Non-Veg.");
+      return;
+    }
+
+    if (selectedItems.length === 0) {
+      alert("Please select at least one menu item.");
+      return;
+    }
+
+    let message =
+`Sai Sri Shanmukha Caterings and Events
+
+Package: ${selectedPackage}
+Type: ${selectedType}
+
+Selected Menu Items:
+${selectedItems.join("\n")}
+
+Please contact me regarding this menu.`;
+
+    let whatsappURL =
+      "https://api.whatsapp.com/send?phone=918309361627&text=" +
+      encodeURIComponent(message);
+
+    window.location.href = whatsappURL;
+  }
+
+  function goBack() {
+    document.getElementById("menuBuilder").classList.add("hidden");
+    document.getElementById("packages").scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
+</body>
+</html>
       background: #fff8ec;
       color: #222;
       text-align: center;
