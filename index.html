@@ -18,14 +18,37 @@
       overflow-x: hidden;
     }
 
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      background: url('logo.png') center center no-repeat;
+      background-size: 75%;
+
+      opacity: 0.08;
+      z-index: 0;
+      pointer-events: none;
+    }
+
     .hidden {
       display: none;
     }
 
-    /* FULL SCREEN FIRST PAGE */
+    #landingPage,
+    #mainPage,
+    .box,
+    footer {
+      position: relative;
+      z-index: 1;
+    }
+
     #landingPage {
       min-height: 100vh;
-      background: linear-gradient(135deg, #8b0000, #ff7a00, #ffb347);
+      background: linear-gradient(135deg, rgba(139,0,0,0.92), rgba(255,122,0,0.9), rgba(255,179,71,0.88));
       color: white;
       display: flex;
       justify-content: center;
@@ -54,6 +77,8 @@
       width: 100%;
       max-width: 430px;
       animation: fadeUp 1s ease;
+      position: relative;
+      z-index: 2;
     }
 
     @keyframes fadeUp {
@@ -114,14 +139,13 @@
       box-shadow: 0 0 25px white;
     }
 
-    /* SECOND PAGE */
     #mainPage {
       min-height: 100vh;
-      background: #fff8ec;
+      background: rgba(255,248,236,0.82);
     }
 
     .top-bar {
-      background: linear-gradient(135deg, #8b0000, #ff9900);
+      background: linear-gradient(135deg, rgba(139,0,0,0.95), rgba(255,153,0,0.9));
       color: white;
       padding: 22px 15px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.2);
@@ -139,6 +163,8 @@
 
     .section {
       padding: 35px 14px;
+      position: relative;
+      z-index: 1;
     }
 
     .section h2 {
@@ -233,7 +259,7 @@
       margin: 25px auto;
       padding: 22px 14px;
       border-radius: 25px;
-      background: white;
+      background: rgba(255,255,255,0.92);
       box-shadow: 0 8px 25px rgba(0,0,0,0.2);
       animation: openBox 0.5s ease;
     }
@@ -332,7 +358,7 @@
     .items label {
       display: block;
       padding: 12px;
-      background: #f7f7f7;
+      background: rgba(247,247,247,0.95);
       margin: 9px 0;
       border-radius: 12px;
       cursor: pointer;
@@ -364,7 +390,7 @@
     }
 
     footer {
-      background: #111;
+      background: rgba(17,17,17,0.95);
       color: white;
       padding: 30px 15px;
       font-size: 15px;
@@ -377,6 +403,10 @@
     }
 
     @media (min-width: 800px) {
+      body::before {
+        background-size: 45%;
+      }
+
       .landing-content h1 {
         font-size: 55px;
       }
@@ -410,7 +440,6 @@
 
 <body>
 
-<!-- FULL SCREEN LANDING PAGE -->
 <section id="landingPage">
   <div class="landing-content">
     <div class="main-icons">🍽️ 🥄 🍴 🥣</div>
@@ -427,7 +456,6 @@
   </div>
 </section>
 
-<!-- MAIN WEBSITE AFTER ENTER -->
 <section id="mainPage" class="hidden">
 
   <div class="top-bar">
