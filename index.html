@@ -16,10 +16,41 @@
       background: linear-gradient(135deg, #8b0000, #ff9900);
       color: white;
       padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "🍽️ 🥄 🍴 🥣 🍛";
+      position: absolute;
+      font-size: 70px;
+      opacity: 0.12;
+      top: 20px;
+      left: -100px;
+      animation: moveIcons 12s linear infinite;
+    }
+
+    @keyframes moveIcons {
+      from {
+        left: -250px;
+      }
+      to {
+        left: 100%;
+      }
     }
 
     header h1 {
       font-size: 45px;
+      animation: titleGlow 2s infinite alternate;
+    }
+
+    @keyframes titleGlow {
+      from {
+        text-shadow: 0 0 10px white;
+      }
+      to {
+        text-shadow: 0 0 25px gold, 0 0 40px red;
+      }
     }
 
     .btn, .back-btn, .menu-btn {
@@ -34,6 +65,12 @@
       background: white;
       color: #8b0000;
       font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn:hover, .back-btn:hover, .menu-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 18px rgba(0,0,0,0.3);
     }
 
     .section {
@@ -43,22 +80,71 @@
     .cards {
       display: flex;
       justify-content: center;
-      gap: 25px;
+      gap: 30px;
       flex-wrap: wrap;
     }
 
     .card {
       width: 280px;
-      border-radius: 20px;
+      height: 170px;
+      border-radius: 25px;
       padding: 30px;
       color: white;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.4s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      animation: floatCard 3s ease-in-out infinite;
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .card:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes floatCard {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -80%;
+      width: 50%;
+      height: 100%;
+      background: rgba(255,255,255,0.3);
+      transform: skewX(-25deg);
+      transition: 0.6s;
+    }
+
+    .card:hover::before {
+      left: 130%;
     }
 
     .card:hover {
-      transform: scale(1.05);
+      transform: scale(1.08);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+    }
+
+    .card h3 {
+      font-size: 30px;
+      z-index: 2;
     }
 
     .normal {
@@ -85,6 +171,50 @@
       border-radius: 25px;
       background: white;
       box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      animation: openBox 0.5s ease;
+    }
+
+    @keyframes openBox {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .type-boxes {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .type-card {
+      width: 160px;
+      padding: 20px;
+      border-radius: 18px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
+
+    .type-card:hover {
+      transform: scale(1.08);
+    }
+
+    .veg-card {
+      background: linear-gradient(135deg, #0b8f3a, #7be495);
+    }
+
+    .nonveg-card {
+      background: linear-gradient(135deg, #b00020, #ff4d4d);
     }
 
     .category {
@@ -118,6 +248,12 @@
       font-size: 18px;
       font-weight: bold;
       cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 18px #25D366;
     }
 
     footer {
@@ -139,6 +275,10 @@
       .card {
         width: 90%;
       }
+
+      .type-card {
+        width: 75%;
+      }
     }
   </style>
 </head>
@@ -158,17 +298,14 @@
   <div class="cards">
     <div class="card normal" onclick="openPackage('Normal')">
       <h3>Normal</h3>
-      <p>Green Theme Menu</p>
     </div>
 
     <div class="card standard" onclick="openPackage('Standard')">
       <h3>Standard</h3>
-      <p>Orange Theme Menu</p>
     </div>
 
     <div class="card premium" onclick="openPackage('Premium')">
       <h3>Premium</h3>
-      <p>Black & White Luxury Menu</p>
     </div>
   </div>
 </section>
@@ -178,8 +315,16 @@
     <h2 id="packageTitle"></h2>
 
     <h3>Select Type</h3>
-    <button class="menu-btn" onclick="selectType('Veg')">🌱 Veg</button>
-    <button class="menu-btn" onclick="selectType('Non-Veg')">🍗 Non-Veg</button>
+
+    <div class="type-boxes">
+      <div class="type-card veg-card" onclick="selectType('Veg')">
+        🌱 Veg
+      </div>
+
+      <div class="type-card nonveg-card" onclick="selectType('Non-Veg')">
+        🍗 Non-Veg
+      </div>
+    </div>
 
     <div id="categories" class="hidden">
       <h3>Select Category</h3>
