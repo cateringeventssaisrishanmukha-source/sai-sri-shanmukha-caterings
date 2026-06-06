@@ -4,399 +4,291 @@
   <title>Sai Sri Shanmukha Caterings</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      box-sizing: border-box;
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:'League Spartan',Arial,sans-serif;
+      background:#fff8ec;
+      color:#222;
+      text-align:center;
+      overflow-x:hidden;
     }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff8ec;
-      color: #222;
-      text-align: center;
-      overflow-x: hidden;
-    }
+    .hidden{display:none}
 
-    .hidden {
-      display: none;
-    }
-
-    #landingPage {
-      min-height: 100vh;
-      width: 100%;
+    #landingPage{
+      min-height:100vh;
       background:
-        linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.62)),
+        linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.62)),
         url("logo.png.jpeg");
-      background-size: cover, 92%;
-      background-repeat: no-repeat;
-      background-position: center, center;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 25px;
-      text-align: center;
+      background-size:cover,120%;
+      background-repeat:no-repeat;
+      background-position:center;
+      color:white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:25px;
     }
 
-    .landing-content {
-      width: 100%;
-      max-width: 430px;
-      animation: fadeUp 1s ease;
+    .landing-content{
+      width:100%;
+      max-width:430px;
+      animation:fadeUp 1s ease;
     }
 
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(30px)}
+      to{opacity:1;transform:translateY(0)}
     }
 
-    .landing-content h1 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(34px, 11vw, 52px);
-      line-height: 1.15;
-      margin: 15px 0;
-      letter-spacing: 1px;
-      color: #fff7df;
-      text-shadow: 0 3px 12px rgba(0,0,0,0.8);
+    .landing-content h1{
+      font-size:clamp(36px,11vw,55px);
+      line-height:1.1;
+      margin:15px 0;
+      color:#fff7df;
+      text-shadow:0 3px 12px rgba(0,0,0,.8);
     }
 
-    .landing-content p {
-      font-size: 18px;
-      line-height: 1.7;
-      margin: 25px 0;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    .landing-content p{
+      font-size:20px;
+      line-height:1.6;
+      text-shadow:0 2px 8px rgba(0,0,0,.8);
     }
 
-    .enter-btn {
-      margin-top: 20px;
-      padding: 16px 50px;
-      border: none;
-      border-radius: 40px;
-      background: white;
-      color: #8b0000;
-      font-size: 20px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      transition: 0.3s;
+    .enter-btn{
+      margin-top:20px;
+      padding:16px 55px;
+      border:none;
+      border-radius:40px;
+      background:white;
+      color:#8b0000;
+      font-size:22px;
+      font-weight:800;
+      cursor:pointer;
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
     }
 
-    .enter-btn:hover {
-      transform: scale(1.08);
-    }
-
-    #mainPage {
-      min-height: 100vh;
+    #mainPage{
+      min-height:100vh;
       background:
-        linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90)),
+        linear-gradient(rgba(255,255,255,.90),rgba(255,255,255,.90)),
         url("logo.png.jpeg");
-      background-size: cover, 75%;
-      background-repeat: no-repeat;
-      background-position: center, center;
-      background-attachment: fixed;
+      background-size:cover,120%;
+      background-repeat:no-repeat;
+      background-position:center;
+      background-attachment:fixed;
     }
 
-    .top-bar {
-      background: linear-gradient(135deg, rgba(139,0,0,0.95), rgba(255,153,0,0.95));
-      color: white;
-      padding: 22px 15px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    .top-bar{
+      background:linear-gradient(135deg,#8b0000,#ff9900);
+      color:white;
+      padding:18px 15px;
+      box-shadow:0 6px 18px rgba(0,0,0,.2);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
     }
 
-    .top-bar h2 {
-      margin: 0;
-      font-size: 24px;
-      font-family: Georgia, 'Times New Roman', serif;
+    .top-logo{
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      object-fit:cover;
+      background:white;
     }
 
-    .top-bar p {
-      margin: 8px 0 0;
-      font-size: 14px;
+    .top-text h2{
+      margin:0;
+      font-size:25px;
     }
 
-    .section {
-      padding: 35px 14px;
+    .top-text p{
+      margin:5px 0 0;
+      font-size:14px;
     }
 
-    .section h2 {
-      font-size: 27px;
-      color: #5c0000;
-      margin-bottom: 30px;
-      font-family: Georgia, 'Times New Roman', serif;
+    .section{
+      padding:35px 14px;
     }
 
-    .cards {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 22px;
-      width: 100%;
+    .section h2{
+      font-size:31px;
+      color:#5c0000;
+      margin-bottom:28px;
     }
 
-    .card {
-      width: 92%;
-      max-width: 370px;
-      height: 135px;
-      border-radius: 25px;
-      padding: 25px;
-      color: white;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-      cursor: pointer;
-      transition: 0.4s;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      animation: floatCard 3s ease-in-out infinite;
+    .cards{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:22px;
     }
 
-    .card:nth-child(2) {
-      animation-delay: 0.3s;
+    .card{
+      width:92%;
+      max-width:370px;
+      height:135px;
+      border-radius:25px;
+      color:white;
+      box-shadow:0 12px 30px rgba(0,0,0,.3);
+      cursor:pointer;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+      position:relative;
+      transition:.35s;
     }
 
-    .card:nth-child(3) {
-      animation-delay: 0.6s;
+    .card:hover{transform:scale(1.04)}
+
+    .card h3{
+      font-size:35px;
+      margin:0;
+      z-index:2;
     }
 
-    @keyframes floatCard {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-7px); }
-      100% { transform: translateY(0); }
+    .normal{background:linear-gradient(135deg,#003caa,#1e88ff)}
+    .standard{background:linear-gradient(135deg,#ff7a00,#ffd166)}
+    .premium{background:linear-gradient(135deg,#000,#444);border:4px solid white}
+
+    .box{
+      width:94%;
+      max-width:560px;
+      margin:25px auto;
+      padding:24px 14px;
+      border-radius:25px;
+      background:rgba(255,255,255,.96);
+      box-shadow:0 8px 25px rgba(0,0,0,.25);
     }
 
-    .card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -80%;
-      width: 50%;
-      height: 100%;
-      background: rgba(255,255,255,0.35);
-      transform: skewX(-25deg);
-      transition: 0.6s;
+    #packageTitle{
+      color:#5c0000;
+      font-size:27px;
+      margin-bottom:20px;
     }
 
-    .card:hover::before {
-      left: 130%;
+    .type-boxes{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+      margin:20px 0;
     }
 
-    .card:hover {
-      transform: scale(1.04);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+    .type-card{
+      width:85%;
+      max-width:300px;
+      padding:18px;
+      border-radius:18px;
+      color:white;
+      font-size:22px;
+      font-weight:800;
+      cursor:pointer;
+      box-shadow:0 8px 18px rgba(0,0,0,.25);
     }
 
-    .card h3 {
-      font-size: 31px;
-      z-index: 2;
-      margin: 0;
-      font-family: Georgia, 'Times New Roman', serif;
+    .veg-card{background:linear-gradient(135deg,#0b8f3a,#7be495)}
+    .nonveg-card{background:linear-gradient(135deg,#b00020,#ff4d4d)}
+
+    .category{
+      display:block;
+      margin:12px auto;
+      padding:14px 28px;
+      border:none;
+      border-radius:30px;
+      background:#8b0000;
+      color:white;
+      width:85%;
+      max-width:320px;
+      font-size:18px;
+      font-weight:800;
+      cursor:pointer;
     }
 
-    .normal {
-      background: linear-gradient(135deg, #0b8f3a, #7be495);
+    .items{
+      text-align:left;
+      width:94%;
+      max-width:430px;
+      margin:20px auto;
+      font-size:17px;
     }
 
-    .standard {
-      background: linear-gradient(135deg, #ff7a00, #ffd166);
+    .items h3{
+      text-align:center;
+      color:#5c0000;
+      font-size:24px;
     }
 
-    .premium {
-      background: linear-gradient(135deg, #000, #444);
-      border: 4px solid white;
+    .items p{
+      text-align:center;
+      color:#8b0000;
+      font-weight:700;
     }
 
-    .box {
-      width: 94%;
-      max-width: 520px;
-      margin: 25px auto;
-      padding: 22px 14px;
-      border-radius: 25px;
-      background: rgba(255,255,255,0.95);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-      animation: openBox 0.5s ease;
+    .items label{
+      display:block;
+      padding:12px;
+      background:#f7f7f7;
+      margin:9px 0;
+      border-radius:12px;
+      cursor:pointer;
+      box-shadow:0 3px 8px rgba(0,0,0,.08);
     }
 
-    @keyframes openBox {
-      from {
-        opacity: 0;
-        transform: translateY(25px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .items input{
+      transform:scale(1.2);
+      margin-right:8px;
     }
 
-    #packageTitle {
-      color: #5c0000;
-      font-size: 24px;
-      margin-bottom: 20px;
-      font-family: Georgia, 'Times New Roman', serif;
+    .submit-btn{
+      background:#25D366;
+      color:white;
+      padding:15px 28px;
+      border-radius:30px;
+      border:none;
+      font-size:18px;
+      font-weight:800;
+      cursor:pointer;
+      width:85%;
+      max-width:320px;
     }
 
-    .type-boxes {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      margin: 20px 0;
+    .back-btn{
+      margin-top:18px;
+      padding:14px 28px;
+      border:none;
+      border-radius:30px;
+      background:white;
+      color:#8b0000;
+      font-size:18px;
+      font-weight:800;
+      cursor:pointer;
     }
 
-    .type-card {
-      width: 85%;
-      max-width: 300px;
-      padding: 18px;
-      border-radius: 18px;
-      color: white;
-      font-size: 20px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    footer{
+      background:rgba(17,17,17,.96);
+      color:white;
+      padding:30px 15px;
+      font-size:16px;
     }
 
-    .type-card:hover {
-      transform: scale(1.05);
-    }
+    footer a{color:white;text-decoration:none;word-break:break-word}
 
-    .veg-card {
-      background: linear-gradient(135deg, #0b8f3a, #7be495);
-    }
-
-    .nonveg-card {
-      background: linear-gradient(135deg, #b00020, #ff4d4d);
-    }
-
-    .back-btn, .menu-btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 14px 28px;
-      border: none;
-      border-radius: 30px;
-      font-weight: bold;
-      cursor: pointer;
-      background: white;
-      color: #8b0000;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-
-    .menu-btn:hover, .back-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 18px rgba(0,0,0,0.3);
-    }
-
-    .category {
-      background: #8b0000;
-      color: white;
-      width: 85%;
-      max-width: 300px;
-    }
-
-    .items {
-      text-align: left;
-      width: 94%;
-      max-width: 420px;
-      margin: 20px auto;
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    .items h3 {
-      text-align: center;
-      color: #5c0000;
-    }
-
-    .items label {
-      display: block;
-      padding: 12px;
-      background: rgba(247,247,247,0.95);
-      margin: 9px 0;
-      border-radius: 12px;
-      cursor: pointer;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-    }
-
-    .items input {
-      transform: scale(1.2);
-      margin-right: 8px;
-    }
-
-    .submit-btn {
-      background: #25D366;
-      color: white;
-      padding: 15px 28px;
-      border-radius: 30px;
-      border: none;
-      font-size: 17px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-      width: 85%;
-      max-width: 320px;
-    }
-
-    .submit-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 18px #25D366;
-    }
-
-    footer {
-      background: rgba(17,17,17,0.96);
-      color: white;
-      padding: 30px 15px;
-      font-size: 15px;
-    }
-
-    footer a {
-      color: white;
-      text-decoration: none;
-      word-break: break-word;
-    }
-
-    @media (min-width: 800px) {
-      #landingPage {
-        background-size: cover, 42%;
-      }
-
-      #mainPage {
-        background-size: cover, 35%;
-      }
-
-      .landing-content h1 {
-        font-size: 55px;
-      }
-
-      .landing-content p {
-        font-size: 22px;
-      }
-
-      .cards {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .card {
-        width: 280px;
-        height: 170px;
-      }
-
-      .type-boxes {
-        flex-direction: row;
-        justify-content: center;
-      }
-
-      .type-card {
-        width: 160px;
-      }
+    @media(min-width:800px){
+      #landingPage{background-size:cover,55%}
+      #mainPage{background-size:cover,55%}
+      .cards{flex-direction:row;justify-content:center;flex-wrap:wrap}
+      .card{width:280px;height:170px}
+      .type-boxes{flex-direction:row;justify-content:center}
+      .type-card{width:160px}
     }
   </style>
 </head>
@@ -406,13 +298,7 @@
 <section id="landingPage">
   <div class="landing-content">
     <h1>Sai Sri Shanmukha<br>Caterings and Events</h1>
-
-    <p>
-      Traditional Taste<br>
-      Best Service<br>
-      Memorable Events
-    </p>
-
+    <p>Traditional Taste<br>Best Service<br>Memorable Events</p>
     <button class="enter-btn" onclick="enterSite()">Enter</button>
   </div>
 </section>
@@ -420,8 +306,11 @@
 <section id="mainPage" class="hidden">
 
   <div class="top-bar">
-    <h2>Sai Sri Shanmukha Caterings</h2>
-    <p>Choose your package and create your menu</p>
+    <img src="logo.png.jpeg" class="top-logo">
+    <div class="top-text">
+      <h2>Sai Sri Shanmukha Caterings</h2>
+      <p>Choose your package and create your menu</p>
+    </div>
   </div>
 
   <section id="packages" class="section">
@@ -449,74 +338,19 @@
       <h3>Select Type</h3>
 
       <div class="type-boxes">
-        <div class="type-card veg-card" onclick="selectType('Veg')">
-          Veg
-        </div>
-
-        <div class="type-card nonveg-card" onclick="selectType('Non-Veg')">
-          Non-Veg
-        </div>
+        <div class="type-card veg-card" onclick="selectType('Veg')">Veg</div>
+        <div class="type-card nonveg-card" onclick="selectType('Non-Veg')">Non-Veg</div>
       </div>
 
-      <div id="categories" class="hidden">
-        <h3>Select Category</h3>
+      <div id="categories" class="hidden"></div>
 
-        <button class="menu-btn category" onclick="showCategory('curries')">Curries</button>
-        <button class="menu-btn category" onclick="showCategory('rice')">Rice Items</button>
-        <button class="menu-btn category" onclick="showCategory('starters')">Starters</button>
-        <button class="menu-btn category" onclick="showCategory('sweets')">Sweets</button>
-        <button class="menu-btn category" onclick="showCategory('drinks')">Drinks</button>
-      </div>
-
-      <div id="curries" class="items hidden">
-        <h3>Curries - Select Items</h3>
-        <label><input type="checkbox" value="Paneer Curry"> Paneer Curry</label>
-        <label><input type="checkbox" value="Dal Fry"> Dal Fry</label>
-        <label><input type="checkbox" value="Mixed Veg Curry"> Mixed Veg Curry</label>
-        <label><input type="checkbox" value="Chicken Curry"> Chicken Curry</label>
-        <label><input type="checkbox" value="Mutton Curry"> Mutton Curry</label>
-      </div>
-
-      <div id="rice" class="items hidden">
-        <h3>Rice Items - Select Items</h3>
-        <label><input type="checkbox" value="White Rice"> White Rice</label>
-        <label><input type="checkbox" value="Jeera Rice"> Jeera Rice</label>
-        <label><input type="checkbox" value="Veg Biryani"> Veg Biryani</label>
-        <label><input type="checkbox" value="Chicken Biryani"> Chicken Biryani</label>
-        <label><input type="checkbox" value="Mutton Biryani"> Mutton Biryani</label>
-      </div>
-
-      <div id="starters" class="items hidden">
-        <h3>Starters - Select Items</h3>
-        <label><input type="checkbox" value="Veg Manchurian"> Veg Manchurian</label>
-        <label><input type="checkbox" value="Paneer 65"> Paneer 65</label>
-        <label><input type="checkbox" value="Chicken 65"> Chicken 65</label>
-        <label><input type="checkbox" value="Chicken Fry"> Chicken Fry</label>
-      </div>
-
-      <div id="sweets" class="items hidden">
-        <h3>Sweets - Select Items</h3>
-        <label><input type="checkbox" value="Gulab Jamun"> Gulab Jamun</label>
-        <label><input type="checkbox" value="Double Ka Meetha"> Double Ka Meetha</label>
-        <label><input type="checkbox" value="Payasam"> Payasam</label>
-        <label><input type="checkbox" value="Ice Cream"> Ice Cream</label>
-      </div>
-
-      <div id="drinks" class="items hidden">
-        <h3>Drinks - Select Items</h3>
-        <label><input type="checkbox" value="Water Bottle"> Water Bottle</label>
-        <label><input type="checkbox" value="Soft Drinks"> Soft Drinks</label>
-        <label><input type="checkbox" value="Badam Milk"> Badam Milk</label>
-        <label><input type="checkbox" value="Fruit Juice"> Fruit Juice</label>
-      </div>
-
-      <br>
+      <div id="itemsBox" class="items hidden"></div>
 
       <button class="submit-btn" onclick="sendToWhatsApp()">
         Submit Menu on WhatsApp
       </button>
 
-      <br><br>
+      <br>
 
       <button class="back-btn" onclick="goBack()">Back to Packages</button>
     </div>
@@ -525,112 +359,256 @@
   <footer>
     <h2>Contact Us</h2>
     <p>Phone: <a href="tel:8309361627">8309361627</a></p>
-    <p>
-      Email: <a href="mailto:catering.events.saisrishanmukha@gmail.com">
-        catering.events.saisrishanmukha@gmail.com
-      </a>
-    </p>
+    <p>Email: <a href="mailto:catering.events.saisrishanmukha@gmail.com">
+      catering.events.saisrishanmukha@gmail.com
+    </a></p>
   </footer>
 
 </section>
 
 <script>
-  let selectedPackage = "";
-  let selectedType = "";
+let selectedPackage = "";
+let selectedType = "";
+let selectedItems = {};
 
-  function enterSite() {
-    document.getElementById("landingPage").style.display = "none";
-    document.getElementById("mainPage").classList.remove("hidden");
-    window.scrollTo(0, 0);
+const vegMenu = {
+  "Starters": [
+    "Spring Roll","Veg-Manchuria","Cutlet","Bullet","Veg-Lollipop","Agwani Roll",
+    "Baby Corn","Paneer Pakodi","Aloo Finger","Gobi 65","Corn Samosa","Onion Samosa",
+    "Paneer Samosa","Veg-Nuggets","Mirchi Pakodi","Tamalpaku Pakodi",
+    "Cut Mirchi Pakodi","Aloo Pakodi","Aritikai Bajji","Onion Pakodi",
+    "Palakura Pakodi","Sweet Corn Crispy"
+  ],
+  "Sweets": [
+    "Poornalu","Chekkarpongali","Double Ka Meeta","Carrot Sorakai Halwa",
+    "Bobaskai Halwa","Pine Apple Halwa","Rava Kesari","Semiya Kesari",
+    "Kaju Barfi","Rasmalai","Gulab Jamun","Kala Jamun","Bobbatlu",
+    "Kova Poori","Jangri","Laddu","Kaddu Ka Keer","Baadhusha","Gajar Ka Halwa"
+  ],
+  "Roti": [
+    "Rumali Roti","Tandoori Roti","Latch Parota","Pulka","Poori","Palak Poori","Chapathi"
+  ],
+  "Biryani": [
+    "Veg-Dum Biryani","Bagara Rice","Pulao","Paneer Biryani",
+    "Kashmeer Aloo Biryani","Panasakai Biryani"
+  ],
+  "Rice Items": [
+    "Jeera Rice","Palak Rice","Tomato Rice","Coconut Rice","Kotmeera Rice",
+    "Pudina Rice","Fried Rice","Sambar Rice","Curd Rice","Kaju Pulao",
+    "Pulihora","Lemon Rice"
+  ],
+  "Curry": [
+    "Gurthu Vankai","Paneer Butter Masala","Palak Paneer","Mix Veg Kurma",
+    "Paneer Kurma","Aloo Kurma","Baby Corn Kurma","Mushroom Kurma",
+    "Green Peas Curry","Tomato Mulakada Kaju Curry","Chole Masala",
+    "Phool Makani Kurma","Navaratna Kurma","Kaju Tomato Curry",
+    "Aloo Mutter Kurma","Mirchi Ka Salam","Methi Chamal","Malai Methi Paneer",
+    "Malai Guptha","Kadai Paneer","Achari Paneer","Paneer Do Pyaza"
+  ],
+  "Fry": [
+    "Dondakai Fry","Bendakai Fry","Aloo 65","Mix Veg Fry","Capsicum Fry",
+    "Cabbage 65","Brinjal Fry"
+  ],
+  "Dal": [
+    "Mango Dal","Tomato Dal","Palakura Dal","Meti Kura Dal","Gongura Dal",
+    "Doskai Dal","Thotakura Dal","Tadka Dal","Dal Fry","Kala Kura Dal",
+    "Dal Makani","Chinchiguru Dal"
+  ],
+  "Chutney": [
+    "Gongura Chutney","Doskai Chutney","Kotmera Chutney","Dondakai Chutney",
+    "Dosa Avakai","Mango Tunaka Avakai","Califlower Avakai","Mixed Veg Avakai"
+  ],
+  "Liquids": [
+    "Sambar","Tomato Rasam","Majjiga Pulusu","Ulava Charu","Mukkala Pulusu",
+    "Madras Sambar","Pepper Rasam","Pappu Chaaru"
+  ],
+  "Raitha": [
+    "Keera Raitha","Boondhi Raitha","Tadka Raitha","Kela Raitha",
+    "Grape Raitha","Pineapple Raitha"
+  ],
+  "Appadalu": [
+    "Appadalu","Vadiyalu","Oora Mirchi","Chips"
+  ],
+  "Ice Cream": [
+    "Vanilla","Butterscotch","Chocolate","Pans"
+  ],
+  "Drinks": [
+    "Water Bottle","Soft Drinks"
+  ],
+  "Green Salad": [
+    "Green Salad"
+  ],
+  "Pan": [
+    "Pan"
+  ]
+};
+
+const packageLimits = {
+  "Normal": {
+    "Sweets":1, "Starters":1, "Biryani":1, "Curry":1, "Fry":1,
+    "Ice Cream":1, "Dal":1, "Chutney":1, "Rice Items":1,
+    "Liquids":1, "Raitha":1, "Appadalu":1
+  },
+  "Standard": {
+    "Sweets":1, "Starters":1, "Roti":1, "Biryani":1, "Curry":4,
+    "Dal":1, "Liquids":1, "Chutney":1, "Fry":1, "Raitha":1,
+    "Rice Items":1, "Appadalu":1, "Green Salad":1, "Ice Cream":1, "Drinks":1
+  },
+  "Premium": {
+    "Sweets":2, "Starters":1, "Roti":1, "Biryani":1, "Rice Items":2,
+    "Curry":3, "Fry":1, "Chutney":2, "Dal":1, "Liquids":1,
+    "Raitha":1, "Pan":1, "Appadalu":1, "Green Salad":1
   }
+};
 
-  function openPackage(packageName) {
-    selectedPackage = packageName;
+function enterSite(){
+  document.getElementById("landingPage").style.display = "none";
+  document.getElementById("mainPage").classList.remove("hidden");
+  window.scrollTo(0,0);
+}
 
-    document.getElementById("packageTitle").innerText =
-      packageName + " Package - Create Your Menu";
+function openPackage(packageName){
+  selectedPackage = packageName;
+  selectedType = "";
+  selectedItems = {};
 
-    document.getElementById("menuBuilder").classList.remove("hidden");
-    document.getElementById("menuBuilder").scrollIntoView({ behavior: "smooth" });
+  document.getElementById("packageTitle").innerText =
+    packageName + " Package - Create Your Menu";
 
-    document.getElementById("categories").classList.add("hidden");
-    hideAllCategories();
-    clearSelections();
-    selectedType = "";
-  }
+  document.getElementById("menuBuilder").classList.remove("hidden");
+  document.getElementById("categories").classList.add("hidden");
+  document.getElementById("itemsBox").classList.add("hidden");
+  document.getElementById("itemsBox").innerHTML = "";
 
-  function selectType(type) {
-    selectedType = type;
+  document.getElementById("menuBuilder").scrollIntoView({behavior:"smooth"});
+}
+
+function selectType(type){
+  selectedType = type;
+  selectedItems = {};
+
+  if(type === "Non-Veg"){
     document.getElementById("categories").classList.remove("hidden");
-    hideAllCategories();
-    clearSelections();
+    document.getElementById("categories").innerHTML =
+      "<h3>Non-Veg Menu Coming Soon</h3>";
+    document.getElementById("itemsBox").classList.add("hidden");
+    return;
   }
 
-  function showCategory(categoryId) {
-    hideAllCategories();
-    document.getElementById(categoryId).classList.remove("hidden");
-  }
+  showCategories();
+}
 
-  function hideAllCategories() {
-    let categories = ["curries", "rice", "starters", "sweets", "drinks"];
+function showCategories(){
+  const limits = packageLimits[selectedPackage];
+  const categoriesDiv = document.getElementById("categories");
+  categoriesDiv.classList.remove("hidden");
+  categoriesDiv.innerHTML = "<h3>Select Category</h3>";
 
-    categories.forEach(function(id) {
-      document.getElementById(id).classList.add("hidden");
-    });
-  }
+  Object.keys(limits).forEach(cat=>{
+    categoriesDiv.innerHTML +=
+      `<button class="category" onclick="showItems('${cat}')">${cat}</button>`;
+  });
+}
 
-  function clearSelections() {
-    let checkboxes = document.querySelectorAll("input[type='checkbox']");
-    checkboxes.forEach(function(box) {
-      box.checked = false;
-    });
-  }
+function showItems(category){
+  const box = document.getElementById("itemsBox");
+  const limit = packageLimits[selectedPackage][category];
+  const items = vegMenu[category];
 
-  function sendToWhatsApp() {
-    let selectedItems = [];
-    let checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
+  if(!selectedItems[category]) selectedItems[category] = [];
 
-    checkboxes.forEach(function(box) {
-      selectedItems.push(box.value);
-    });
+  box.classList.remove("hidden");
 
-    if (selectedPackage === "") {
-      alert("Please select Normal, Standard or Premium package.");
+  let html = `<h3>${category}</h3>
+              <p>Select only ${limit}</p>`;
+
+  items.forEach(item=>{
+    const checked = selectedItems[category].includes(item) ? "checked" : "";
+    html += `
+      <label>
+        <input type="checkbox" ${checked}
+        onchange="toggleItem('${category}','${item.replace(/'/g,"")} ',this)">
+        ${item}
+      </label>`;
+  });
+
+  box.innerHTML = html;
+}
+
+function toggleItem(category,item,checkbox){
+  item = item.trim();
+  const limit = packageLimits[selectedPackage][category];
+
+  if(!selectedItems[category]) selectedItems[category] = [];
+
+  if(checkbox.checked){
+    if(selectedItems[category].length >= limit){
+      checkbox.checked = false;
+      alert("You can select only " + limit + " item(s) in " + category);
       return;
     }
+    selectedItems[category].push(item);
+  } else {
+    selectedItems[category] = selectedItems[category].filter(i => i !== item);
+  }
+}
 
-    if (selectedType === "") {
-      alert("Please select Veg or Non-Veg.");
-      return;
+function sendToWhatsApp(){
+  if(selectedPackage === ""){
+    alert("Please select package");
+    return;
+  }
+
+  if(selectedType === ""){
+    alert("Please select Veg or Non-Veg");
+    return;
+  }
+
+  if(selectedType === "Non-Veg"){
+    alert("Non-Veg menu will be added later");
+    return;
+  }
+
+  const limits = packageLimits[selectedPackage];
+  let missing = [];
+
+  Object.keys(limits).forEach(cat=>{
+    if(!selectedItems[cat] || selectedItems[cat].length < limits[cat]){
+      missing.push(cat + " (" + limits[cat] + ")");
     }
+  });
 
-    if (selectedItems.length === 0) {
-      alert("Please select at least one menu item.");
-      return;
-    }
+  if(missing.length > 0){
+    alert("Please complete these categories:\n" + missing.join("\n"));
+    return;
+  }
 
-    let message =
+  let message =
 `Sai Sri Shanmukha Caterings and Events
 
 Package: ${selectedPackage}
 Type: ${selectedType}
 
-Selected Menu Items:
-${selectedItems.join("\n")}
+Selected Menu:
+`;
 
-Please contact me regarding this menu.`;
+  Object.keys(limits).forEach(cat=>{
+    message += `\n${cat}: ${selectedItems[cat].join(", ")}`;
+  });
 
-    let whatsappURL =
-      "https://api.whatsapp.com/send?phone=918309361627&text=" +
-      encodeURIComponent(message);
+  message += `\n\nPlease contact me regarding this menu.`;
 
-    window.location.href = whatsappURL;
-  }
+  let whatsappURL =
+    "https://api.whatsapp.com/send?phone=918309361627&text=" +
+    encodeURIComponent(message);
 
-  function goBack() {
-    document.getElementById("menuBuilder").classList.add("hidden");
-    document.getElementById("packages").scrollIntoView({ behavior: "smooth" });
-  }
+  window.location.href = whatsappURL;
+}
+
+function goBack(){
+  document.getElementById("menuBuilder").classList.add("hidden");
+  document.getElementById("packages").scrollIntoView({behavior:"smooth"});
+}
 </script>
 
 </body>
