@@ -522,12 +522,12 @@ function showItems(category){
   let html = `<h3>${category}</h3>
               <p>Select only ${limit}</p>`;
 
-  items.forEach(item=>{
+  items.forEach((item, index)=>{
     const checked = selectedItems[category].includes(item) ? "checked" : "";
     html += `
       <label>
         <input type="checkbox" ${checked}
-        onchange="toggleItem('${category}','${item.replace(/'/g,"")} ',this)">
+        onchange="toggleItem('${category}', ${index}, this)">
         ${item}
       </label>`;
   });
@@ -535,8 +535,8 @@ function showItems(category){
   box.innerHTML = html;
 }
 
-function toggleItem(category,item,checkbox){
-  item = item.trim();
+function toggleItem(category,index,checkbox){
+  const item = vegMenu[category][index];
   const limit = packageLimits[selectedPackage][category];
 
   if(!selectedItems[category]) selectedItems[category] = [];
@@ -569,17 +569,16 @@ function sendToWhatsApp(){
     return;
   }
 
-  const limits = packageLimits[selectedPackage];
-  let missing = [];
+  let hasItems = false;
 
-  Object.keys(limits).forEach(cat=>{
-    if(!selectedItems[cat] || selectedItems[cat].length < limits[cat]){
-      missing.push(cat + " (" + limits[cat] + ")");
+  Object.keys(selectedItems).forEach(cat=>{
+    if(selectedItems[cat] && selectedItems[cat].length > 0){
+      hasItems = true;
     }
   });
 
-  if(missing.length > 0){
-    alert("Please complete these categories:\n" + missing.join("\n"));
+  if(!hasItems){
+    alert("Please select at least one menu item");
     return;
   }
 
@@ -592,8 +591,10 @@ Type: ${selectedType}
 Selected Menu:
 `;
 
-  Object.keys(limits).forEach(cat=>{
-    message += `\n${cat}: ${selectedItems[cat].join(", ")}`;
+  Object.keys(selectedItems).forEach(cat=>{
+    if(selectedItems[cat] && selectedItems[cat].length > 0){
+      message += `\n${cat}: ${selectedItems[cat].join(", ")}`;
+    }
   });
 
   message += `\n\nPlease contact me regarding this menu.`;
